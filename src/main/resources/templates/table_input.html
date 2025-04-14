@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단 입력</title>
+</head>
+<body>
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+
+<form method="post" th:action="@{/Times_Table}">
+    <label>단을 입력해주세요 : </label>
+    <input type="number" id="dan" name="dan" required>
+    <button type="submit">완료</button>
+</form>
+
+</body>
+</html>

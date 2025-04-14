@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>성적 결과</title>
+</head>
+
+<body>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+
+    <h2>입력받은 성적</h2>
+    <p th:text="'이름: ' + ${score.name}"></p>
+    <p th:text="'국어: ' + ${score.kor}"></p>
+    <p th:text="'영어: ' + ${score.eng}"></p>
+    <p th:text="'수학: ' + ${score.math}"></p>
+    <p th:text="'총점: ' + ${total}"></p>
+    <p th:text="'평균: ' + ${avg}"></p>
+</body>
+</html>

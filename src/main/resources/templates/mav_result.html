@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mav_result</title>
+</head>
+<body>
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+  <h2>ModelAndView 결과</h2>
+  <p>아이템 값: <span th:text="${item}">[item값이 여기에 표시됩니다]</span></p>
+<!--  <h1 th:text="|이름: ${item}|"></h1>-->
+</body>
+</html>
