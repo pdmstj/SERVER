@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+
+<table>
+    <tr>
+        <th th:text="Post_Date"></th>
+        <th th:text="Date"></th>
+        <th th:text="Write"></th>
+        <th th:text="Memo"></th>
+        <th th:text="ETC"></th>
+    </tr>
+
+    <tr th:each="item : ${data}">
+        <td th:text="${item.post_date}"></td>
+        <td th:text="${item.idx}"></td>
+        <td th:text="${item.memo}"></td>
+        <td><a th:href="@{'/edit/'+${item.idx}}">Update</a>
+            <a th:href="@{'/delete/'+${item.idx}}">Delete</a></td>
+    </tr>
+</table>
+
+</body>
+</html>

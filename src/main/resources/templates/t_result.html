@@ -7,7 +7,8 @@
 </head>
 <body>
 
-<th:block th:replace="fragments/menu::menuFragment"></th:block>
-<h1 th:text="'Result'"></h1>
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+<h1 th:text="'출력결과 '"></h1>
+<div th:text="${result}"></div>
 </body>
 </html>

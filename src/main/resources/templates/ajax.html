@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script th:inline="javascript">
+        $.ready(()=>{
+        $.ajax({
+          type:"get",
+          url:"/background",
+          success:function(dto){
+          console.log("bb");
+          console.log("aaa",res);
+            $("#result").html("성공입니다"+dto.item);
+            }
+
+        })
+        })
+<!--        const fn=()=>{-->
+<!--        $.ajax({-->
+<!--          type:"get",-->
+<!--          url:"/background",-->
+<!--          success:function(res){-->
+<!--          console.log("aaa",res);-->
+<!--            $("#result").html("성공입니다");-->
+<!--            }-->
+
+<!--        })}-->
+    </script>
+</head>
+<body>
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+<div id="#result"></div>
+</body>
+</html>

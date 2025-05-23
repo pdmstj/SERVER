@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>수정</title>
+</head>
+<body>
+<h2>할 일 수정</h2>
+
+<form th:action="@{/todo/edit}" method="post" th:object="${todo}">
+  <input type="hidden" th:field="*{id}" />
+  <input type="text" th:field="*{title}" required />
+  <button type="submit">수정 완료</button>
+</form>
+
+<a th:href="@{/todo}">← 돌아가기</a>
+</body>
+</html>

@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-  <meta charset="UTF-8">
-  <title>로그인</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 <body>
-<h2>로그인</h2>
-<form th:action="@{/login}" method="post">
-  <div>
-    <label>아이디 : <input type="text" name="username"/></label>
-  </div>
-  <div>
-    <label>비밀번호 : <input type="password" name="password"/></label>
-  </div>
-  <br>
-  <div>
-    <button type="submit">로그인</button>
-  </div>
-</form>
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+id:<input type="text" id="id"/>
+pw:<input type="password" id="pw"/>
+<button type="button"  id="btn_login" value="Login">Login</button>
+<div id="result"></div>
 </body>
+<script th:javascript>
+    $(function(){
+     $("#btn_login").click(function(){
+       id=$("#id").val();
+       pw=$("#pw").val();
+       params={"id":id, "pw":pw};
+       $.ajax({
+         type:"post",
+         url:"login_result",
+         data:params,
+         success: function(txt){
+         console.log("suss");
+         $("#result").html(txt);}
+       })
+     })
+    })
+</script>
 </html>

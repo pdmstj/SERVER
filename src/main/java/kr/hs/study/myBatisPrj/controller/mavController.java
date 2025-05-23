@@ -4,13 +4,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 public class mavController {
     @GetMapping("/mav")
     public ModelAndView mav(){
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("item", "lay Devine");
-        mv.setViewName("mav_result");
-        return mv;
+        ModelAndView mav=new ModelAndView();
+
+        mav.addObject("dto","Lay Devine Nicky");
+        mav.setViewName("mav_result");
+        return mav;
     }
+
 }

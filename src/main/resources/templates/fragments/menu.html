@@ -2,21 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <th:block th:fragment="menuFragment">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a:link{text-decoration:none; color:gray}
+         a:visited{text-decoration:none; color:gray}
+         a:active{text-decoration:underline; color:red}
+    </style>
 </head>
 <body>
-  <menu>
-    <a th:href="@{/Times_Table}">Home</a> |
-    <a th:href="@{/mav}">ModelAndView</a> |
-    <a th:href="@{/t_table}">Times_Table</a> |
-    <a th:href="@{/score}">Score</a> |
-    <a th:href="@{/login}">Login</a> |
-    <a th:href="@{/Memo}">Memo</a> |
-    <a th:href="@{/Todo}">Todo</a> |
-    <a th:href="@{/bbs}">Bbs</a> |
-    <a th:href="@{/shop}">Shop</a> |
-  </menu>
+ <menu>
+     <a th:href="@{/}">Home | </a>
+     <a th:href="@{/mav}">ModelAndView |</a>
+     <a th:href="@{/t_Table}">Time_Table |</a>
+     <a th:href="@{/score}">Score |</a>
+     <a th:href="@{/ajax}">Ajax |</a>
+     <a th:href="@{/login}">Login |</a>
+     <a th:href="@{/todo}">Todo |</a>
+     <a th:href="@{/Memo}">Memo</a>
+ </menu>
 </body>
 </th:block>
+
 </html>

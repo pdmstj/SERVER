@@ -5,24 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
-public class ScoreController {
-
+public class scoreController {
     @GetMapping("/score")
-    public String scoreForm(Model model) {
-        model.addAttribute("score", new ScoreDTO());
-        return "score_input"; // 점수 입력 폼 (score_input.html)
+    public String score_input(){
+        return "score_input";
     }
-
-    @PostMapping("/score")
-    public String scoreResult(@ModelAttribute("score") ScoreDTO score, Model model) {
-        int total = score.getKor() + score.getEng() + score.getMath();
-        double avg = total / 3.0;
-
-        model.addAttribute("total", total);
-        model.addAttribute("avg", avg);
+   @PostMapping("score_result")
+    public String score_result(ScoreDTO dto, Model model) {
+        dto.setTotal(dto.getKor()+dto.getEng()+dto.getMath());
+        String avg=String.format("%.2f",dto.getTotal()/3.0);
+        dto.setAvg(Double.parseDouble(avg));
+        model.addAttribute("dto",dto);
         return "score_result";
-    }
+
+   }
 }

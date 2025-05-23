@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>성적 결과</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
 <th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
-
-    <h2>입력받은 성적</h2>
-    <p th:text="'이름: ' + ${score.name}"></p>
-    <p th:text="'국어: ' + ${score.kor}"></p>
-    <p th:text="'영어: ' + ${score.eng}"></p>
-    <p th:text="'수학: ' + ${score.math}"></p>
-    <p th:text="'총점: ' + ${total}"></p>
-    <p th:text="'평균: ' + ${avg}"></p>
+<h1 th:text="|이름: ${dto.name}|"></h1>
+<h1 th:text="|국어: ${dto.kor}|"></h1>
+<h1 th:text="|영어: ${dto.eng}|"></h1>
+<h1 th:text="|수학: ${dto.math}|"></h1>
+<h1 th:text="|총점: ${dto.total}|"></h1>
+<h1 th:text="|평균: ${dto.avg}|"></h1>
 </body>
 </html>

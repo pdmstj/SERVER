@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>NOTE MEMO</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+
+<th:block th:replace="~{fragments/menu::menuFragment}"></th:block>
+
+<body class="container mt-5">
+<h2>NOTE MEMO</h2>
+
+<form th:action="/update" method="post" class="mb-4">
+  <div class="form-group">
+    <label for="writer">writer</label>
+    <input type="text" class="form-control" id="writer" name="writer" th:value="${}" required>
+  </div>
+  <div class="form-group">
+    <label for="memoText">memo</label>
+    <textarea class="form-control" id="memoText" name="memo" rows="3" th:text="${}" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">update</button>
+
+
+</form>
+
+
+</body>
+</html>
